@@ -337,7 +337,7 @@
 /* ESTILOS BASE (MÓVIL POR DEFECTO) */
 .search-form-grid {
   display: flex;
-  flex-direction: column; /* Apilado verticalmente por defecto */
+  flex-direction: column; /* Por defecto, todo en una columna */
   gap: 0.75rem;
 }
 
@@ -353,18 +353,20 @@
 /* ESTILOS PARA ESCRITORIO (pantallas de 769px o más) */
 @media (min-width: 769px) {
   .search-form-grid {
-    flex-direction: row; /* Vuelve a ser horizontal */
+    flex-direction: row; /* En escritorio, se ponen en fila */
     align-items: center;
   }
 
   .search-form-grid > .search-input {
-    flex: 1 1 300px; 
+    flex: 1 1 300px; /* Crece para ocupar espacio */
   }
+
   .search-form-grid > .search-select {
-      flex: 1 1 180px;
+    flex: 1 1 180px; /* Crece pero menos que el input */
   }
+
   .search-form-grid > .search-button {
-      flex-shrink: 0; 
+    flex-shrink: 0; /* No se encoge */
   }
 
   .advanced-filters-grid {
@@ -421,16 +423,6 @@
   font-weight: bold;
   padding: 0.5rem;
 }
-
-.advanced-filters-grid {
-  margin-top: 1rem;
-  padding-top: 1rem;
-  border-top: 1px solid #e9ecef;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 1rem;
-}
-
 /* --- Media Queries para Diseño Adaptable --- */
 
 @media (max-width: 768px) {
