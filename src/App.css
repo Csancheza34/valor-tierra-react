@@ -1,9 +1,8 @@
-/* src/App.css */
-/* En src/App.css (Reemplaza los estilos de .App y .app-header) */
+/* src/App.css (Versión Final Definitiva) */
 
 /* --- HERO SECTION CON BUSCADOR --- */
 .hero-section {
-  /* La ruta ahora es local desde la carpeta 'public' */
+  /* Asegúrate que la ruta a tu imagen sea correcta desde la carpeta 'public' */
   background-image: linear-gradient(rgba(19, 47, 68, 0.7), rgba(19, 47, 68, 0.7)), url('/hero-background.jpg');
   background-size: cover;
   background-position: center;
@@ -26,303 +25,6 @@
   padding: 2rem;
 }
 
-/* Estilos para la lista de propiedades */
-.property-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 2rem;
-}
-
-/* Estilos para cada tarjeta */
-.property-card {
-  background-color: #fff;
-  border-radius: 8px; /* Un poco menos redondeado */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  overflow: hidden;
-  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-}
-.property-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-}
-.property-image-container {
-  position: relative;
-}
-.property-image {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-}
-.property-biz-type {
-  position: absolute;
-  top: 12px;
-  left: 12px;
-  background-color: var(--color-azul-muy-oscuro);
-  color: #fff;
-  padding: 5px 12px;
-  border-radius: 5px;
-  font-size: 0.8rem;
-  font-weight: bold;
-}
-.property-info {
-  padding: 1.25rem;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-}
-.property-location {
-  color: #5a677d;
-  font-size: 0.9rem;
-  margin: 0 0 0.5rem 0;
-}
-.property-title {
-  margin: 0 0 0.5rem 0;
-  font-size: 1.2rem;
-  font-weight: 700; /* Open Sans Bold */
-  color: var(--color-azul-muy-oscuro);
-}
-.property-price {
-  margin: 0 0 1rem 0;
-  font-size: 1.4rem;
-  font-weight: 800; /* Open Sans Black */
-  color: var(--color-naranja-brillante);
-}
-.property-specs {
-  display: flex;
-  justify-content: space-between;
-  border-top: 1px solid #e9ecef;
-  padding-top: 1rem;
-  margin-top: auto;
-  font-size: 0.9rem;
-  color: #5a677d;
-}
-
-/* Mensajes de carga y error */
-.loading-message, .error-message {
-  text-align: center;
-  font-size: 1.2rem;
-  padding: 3rem;
-  color: #5a677d;
-}
-
-.error-message {
-  color: var(--color-naranja-quemado);
-  font-weight: bold;
-}
-/* Añadir al final de src/App.css */
-.property-card-link {
-  text-decoration: none;
-  color: inherit;
-}
-/* Añadir al final de src/App.css */
-.back-link {
-  display: inline-block;
-  margin-bottom: 2rem;
-  color: var(--color-azul-oscuro);
-  font-weight: bold;
-  text-decoration: none;
-}
-.back-link:hover {
-  text-decoration: underline;
-}
-/* --- Estilos para la Página de Detalle --- */
-
-.property-detail-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 2rem;
-}
-
-.detail-header {
-  margin-bottom: 2rem;
-  border-bottom: 1px solid #e9ecef;
-  padding-bottom: 1.5rem;
-}
-
-.detail-header h1 {
-  font-size: 2.2rem;
-  font-weight: 800;
-  color: var(--color-azul-muy-oscuro);
-  margin: 0;
-}
-
-.detail-price {
-  font-size: 2rem;
-  font-weight: 800;
-  color: var(--color-naranja-brillante);
-  margin-top: 0.5rem;
-  display: block;
-}
-
-.detail-layout {
-  display: grid;
-  grid-template-columns: 2fr 1fr; /* Layout de 2/3 para contenido, 1/3 para sidebar */
-  gap: 3rem;
-}
-
-.detail-section {
-  background-color: #fff;
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  margin-bottom: 2rem;
-}
-
-.detail-section h2, .detail-section h3 {
-  margin-top: 0;
-  color: var(--color-azul-muy-oscuro);
-  border-bottom: 2px solid var(--color-naranja-brillante);
-  padding-bottom: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-.detail-section p, .detail-section ul {
-  line-height: 1.7;
-  color: #5a677d;
-}
-
-.specs-box ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.specs-box li {
-  display: flex;
-  justify-content: space-between;
-  padding: 0.75rem 0;
-  border-bottom: 1px solid #f0f2f5;
-}
-
-.specs-box li:last-child {
-  border-bottom: none;
-}
-
-/* --- Estilos para la Galería de Imágenes --- */
-.gallery-container {
-  margin-bottom: 2rem;
-}
-
-.main-image-wrapper {
-  margin-bottom: 1rem;
-}
-
-.main-image {
-  width: 100%;
-  height: auto;
-  max-height: 500px;
-  object-fit: cover;
-  border-radius: 8px;
-}
-
-.thumbnail-wrapper {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
-  gap: 0.5rem;
-}
-
-.thumbnail {
-  width: 100%;
-  height: 60px;
-  object-fit: cover;
-  border-radius: 4px;
-  cursor: pointer;
-  border: 2px solid transparent;
-  transition: border-color 0.2s ease;
-}
-
-.thumbnail:hover {
-  border-color: var(--color-azul-oscuro);
-}
-
-.thumbnail.active {
-  border-color: var(--color-naranja-brillante);
-}
-/* --- Estilos para Ficha de Asesor y Formulario --- */
-
-.agent-box .agent-info {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-
-.agent-photo {
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.agent-details p {
-  margin: 0;
-  line-height: 1.4;
-}
-
-.agent-name {
-  font-weight: bold;
-  font-size: 1.1rem;
-  color: var(--color-azul-muy-oscuro);
-}
-
-.contact-form h4 {
-  margin-top: 0;
-  color: var(--color-azul-muy-oscuro);
-}
-
-.form-group {
-  margin-bottom: 1rem;
-}
-
-.form-group label {
-  display: block;
-  margin-bottom: 0.5rem;
-  font-weight: 600;
-  font-size: 0.9rem;
-}
-
-.form-group input, .form-group textarea {
-  width: 100%;
-  padding: 0.75rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box; /* Importante para que el padding no afecte el ancho */
-}
-
-.submit-button {
-  width: 100%;
-  padding: 0.8rem;
-  border: none;
-  background-color: var(--color-naranja-brillante);
-  color: #fff;
-  font-size: 1.1rem;
-  font-weight: bold;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.submit-button:hover {
-  background-color: var(--color-naranja-quemado);
-}
-/* --- Estilos para el Buscador (Versión Final Definitiva) --- */
-.search-filters-container {
-  background-color: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(5px);
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-  margin-top: 2rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.hero-section .search-form-grid {
-  flex-direction: column !important; /* Forzamos la dirección vertical */
-  align-items: stretch !important; /* Forzamos el estiramiento de los items */
-}
-
 /* --- Estilos para el Buscador (Enfoque Mobile-First Definitivo) --- */
 .search-filters-container {
   background-color: rgba(255, 255, 255, 0.95);
@@ -337,7 +39,7 @@
 /* ESTILOS BASE (MÓVIL POR DEFECTO) */
 .search-form-grid {
   display: flex;
-  flex-direction: column; /* Por defecto, todo en una columna */
+  flex-direction: column; /* Apilado verticalmente por defecto */
   gap: 0.75rem;
 }
 
@@ -353,22 +55,20 @@
 /* ESTILOS PARA ESCRITORIO (pantallas de 769px o más) */
 @media (min-width: 769px) {
   .search-form-grid {
-    flex-direction: row; /* En escritorio, se ponen en fila */
+    flex-direction: row; /* Vuelve a ser horizontal */
     align-items: center;
   }
 
   .search-form-grid > .search-input {
-    flex: 1 1 300px; /* Crece para ocupar espacio */
+    flex: 1 1 300px; 
   }
-
   .search-form-grid > .search-select {
-    flex: 1 1 180px; /* Crece pero menos que el input */
+      flex: 1 1 180px;
   }
-
   .search-form-grid > .search-button {
-    flex-shrink: 0; /* No se encoge */
+      flex-shrink: 0; 
   }
-
+  
   .advanced-filters-grid {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Múltiples columnas en escritorio */
     gap: 1rem;
@@ -423,55 +123,304 @@
   font-weight: bold;
   padding: 0.5rem;
 }
-/* --- Media Queries para Diseño Adaptable --- */
 
+/* --- Estilos generales para Media Queries --- */
 @media (max-width: 768px) {
-  /* Ajustes generales para móviles */
-  .App, .property-detail-container {
+  .header-content {
+    padding: 0 1rem;
+  }
+  .main-content {
     padding: 1rem;
   }
-
+  .hero-section {
+    padding: 3rem 1rem;
+  }
   .hero-content h1 {
     font-size: 2.2rem;
   }
-
-  /* --- Estilos para el Buscador en Móvil --- */
-.search-form-grid {
-  display: flex;
-  flex-direction: column; /* Apilamos los elementos */
-  gap: 0.75rem; /* Reducimos el espacio entre elementos */
-}
-
-/* Hacemos que el input principal ocupe el espacio disponible */
-.search-form-grid > .search-input {
-  flex-grow: 1;
-}
-
-.search-input, .search-select, .search-button {
-  width: 100%; /* Ocupan todo el ancho */
-  padding: 0.8rem;
-  font-size: 1rem; /* Aseguramos un tamaño de fuente legible */
-}
-
-.search-button {
-  min-height: auto; /* El botón se ajusta al contenido */
-}
-
-.advanced-filters-grid {
-  grid-template-columns: 1fr; /* Una sola columna para los filtros avanzados también */
-  gap: 0.75rem;
-}
-
-  /* Página de Detalle en móvil */
   .detail-layout {
-    grid-template-columns: 1fr; /* La columna lateral se apila debajo */
+    grid-template-columns: 1fr;
     gap: 2rem;
   }
-
   .detail-header h1 {
     font-size: 1.8rem;
   }
   .detail-price {
     font-size: 1.6rem;
   }
+}
+
+/* --- Estilos para Ficha de Asesor y Formulario --- */
+/* (El resto de los estilos que ya teníamos) */
+
+.agent-box .agent-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.agent-photo {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.agent-details p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.agent-name {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: var(--color-azul-muy-oscuro);
+}
+
+.contact-form h4 {
+  margin-top: 0;
+  color: var(--color-azul-muy-oscuro);
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.form-group input, .form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box; 
+}
+
+.submit-button {
+  width: 100%;
+  padding: 0.8rem;
+  border: none;
+  background-color: var(--color-naranja-brillante);
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.submit-button:hover {
+  background-color: var(--color-naranja-quemado);
+}
+
+/* --- Estilos para la Página de Detalle --- */
+.property-detail-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+.detail-header {
+  margin-bottom: 2rem;
+  border-bottom: 1px solid #e9ecef;
+  padding-bottom: 1.5rem;
+}
+.detail-header h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--color-azul-muy-oscuro);
+  margin: 0;
+}
+.detail-price {
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--color-naranja-brillante);
+  margin-top: 0.5rem;
+  display: block;
+}
+.detail-layout {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 3rem;
+}
+.detail-section {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+}
+.detail-section h2, .detail-section h3 {
+  margin-top: 0;
+  color: var(--color-azul-muy-oscuro);
+  border-bottom: 2px solid var(--color-naranja-brillante);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+.detail-section p, .detail-section ul {
+  line-height: 1.7;
+  color: #5a677d;
+}
+.specs-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.specs-box li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #f0f2f5;
+}
+.specs-box li:last-child {
+  border-bottom: none;
+}
+.gallery-container {
+  margin-bottom: 2rem;
+}
+.main-image-wrapper {
+  margin-bottom: 1rem;
+}
+.main-image {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+.thumbnail-wrapper {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 0.5rem;
+}
+.thumbnail {
+  width: 100%;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 4px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 0.2s ease;
+}
+.thumbnail:hover {
+  border-color: var(--color-azul-oscuro);
+}
+.thumbnail.active {
+  border-color: var(--color-naranja-brillante);
+}
+.back-link {
+  display: inline-block;
+  margin-bottom: 2rem;
+  color: var(--color-azul-oscuro);
+  font-weight: bold;
+  text-decoration: none;
+}
+.back-link:hover {
+  text-decoration: underline;
+}
+.property-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem;
+}
+.spinner {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid var(--color-azul-oscuro);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+.loading-message, .error-message {
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 3rem;
+  color: #5a677d;
+}
+.error-message {
+  color: var(--color-naranja-quemado);
+  font-weight: bold;
+}
+.property-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+.property-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+}
+.property-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+.property-image-container {
+  position: relative;
+}
+.property-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.property-biz-type {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background-color: var(--color-azul-muy-oscuro);
+  color: #fff;
+  padding: 5px 12px;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+.property-info {
+  padding: 1.25rem;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+.property-location {
+  color: #5a677d;
+  font-size: 0.9rem;
+  margin: 0 0 0.5rem 0;
+}
+.property-title {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-azul-muy-oscuro);
+}
+.property-price {
+  margin: 0 0 1rem 0;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--color-naranja-brillante);
+}
+.property-specs {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #e9ecef;
+  padding-top: 1rem;
+  margin-top: auto;
+  font-size: 0.9rem;
+  color: #5a677d;
 }
