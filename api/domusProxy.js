@@ -1,14 +1,11 @@
 // api/domusProxy.js
 
 export default async function handler(request, response) {
-  // 1. Creamos un objeto URL para manejar los parámetros fácilmente
   const incomingUrl = new URL(request.url, `http://${request.headers.host}`);
   const endpoint = incomingUrl.searchParams.get('endpoint') || 'properties';
 
-  // 2. Creamos la URL base de Domus
   const domusUrl = new URL(`https://api.domus.la/3.0/${endpoint}`);
 
-  // 3. Copiamos todos los parámetros de búsqueda, excepto el nuestro ('endpoint')
   incomingUrl.searchParams.forEach((value, key) => {
     if (key !== 'endpoint') {
       domusUrl.searchParams.append(key, value);
@@ -16,13 +13,24 @@ export default async function handler(request, response) {
   });
 
   try {
+    // 1. Empezamos con las cabeceras base
+    const headers = {
+      'Authorization': process.env.DOMUS_API_TOKEN,
+      'inmobiliaria': '1',
+    };
+
+    // 2. Añadimos cabeceras específicas según lo que se pida
+    if (endpoint === 'properties') {
+      // Si es la lista principal, pedimos 20 inmuebles
+      headers['Perpage'] = '20';
+    } else if (endpoint.startsWith('properties/')) {
+      // Si es un solo inmueble, pedimos la Ficha completa
+      headers['Ficha'] = '1';
+    }
+
     const apiResponse = await fetch(domusUrl.toString(), {
       method: 'GET',
-      headers: {
-        'Authorization': process.env.DOMUS_API_TOKEN,
-        'inmobiliaria': '1',
-        'Ficha': '1'
-      }
+      headers: headers // 3. Usamos nuestras cabeceras dinámicas
     });
 
     if (!apiResponse.ok) {
