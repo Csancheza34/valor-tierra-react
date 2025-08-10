@@ -1,0 +1,50 @@
+/* src/components/Header.css */
+.site-header {
+  background-color: #fff;
+  padding: 0 2rem;
+  border-bottom: 1px solid #e9ecef;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: 80px;
+}
+
+.logo a {
+  font-size: 1.8rem;
+  font-weight: 800; /* Open Sans Black es muy grueso (800 o 900) */
+  font-family: 'Open Sans', sans-serif;
+  color: var(--color-azul-muy-oscuro); /* Usando variable de color */
+  text-decoration: none;
+  text-transform: uppercase; /* Para imitar el estilo del logo */
+}
+
+.main-nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: var(--color-azul-oscuro); /* Usando variable de color */
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.main-nav a:hover {
+  color: var(--color-naranja-brillante); /* Usando variable de color */
+}
+/* Añadir al final de src/components/Header.css */
+
+.logo img {
+  height: 100px; /* Ajusta este valor según el tamaño que prefieras */
+  display: block; /* Ayuda a eliminar espacios extra debajo de la imagen */
+}

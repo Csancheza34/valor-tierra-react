@@ -1,0 +1,27 @@
+/* src/components/WhatsAppButton.css */
+.whatsapp-fab {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background-color: #25D366; /* Color oficial de WhatsApp */
+  color: #fff;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: transform 0.2s ease-in-out;
+  text-decoration: none; /* Asegura que no tenga subrayado */
+}
+
+.whatsapp-fab:hover {
+  transform: scale(1.1);
+}
+
+.whatsapp-fab svg {
+    width: 30px; /* Tamaño del ícono */
+    height: 30px;
+}

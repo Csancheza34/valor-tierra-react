@@ -1,0 +1,24 @@
+/* src/index.css */
+
+/* 1. Importamos la tipografía Open Sans desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap');
+
+/* 2. Definimos las variables de color de tu marca para usarlas fácilmente */
+:root {
+  --color-azul-oscuro: #132f44;
+  --color-azul-muy-oscuro: #062335;
+  --color-naranja-brillante: #ff4700;
+  --color-naranja-quemado: #cf5627;
+  --color-texto-principal: #333;
+  --color-fondo: #f4f6f9; /* Un gris muy claro para el fondo */
+}
+
+/* 3. Establecemos los estilos base del cuerpo de la página */
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif; /* Usamos Open Sans como fuente principal */
+  background-color: var(--color-fondo);
+  color: var(--color-texto-principal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
