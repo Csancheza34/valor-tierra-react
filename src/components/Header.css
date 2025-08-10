@@ -48,3 +48,65 @@
   height: 100px; /* Ajusta este valor según el tamaño que prefieras */
   display: block; /* Ayuda a eliminar espacios extra debajo de la imagen */
 }
+/* src/components/Header.css (Añadir al final) */
+
+/* --- Estilos para el Menú Móvil --- */
+.mobile-nav-toggle {
+  display: none; /* Oculto en escritorio */
+  position: absolute;
+  z-index: 2000;
+  right: 2rem;
+  top: 2rem;
+  background: transparent;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(6, 35, 53, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  width: 2rem;
+  height: 2rem;
+  border: 0;
+  cursor: pointer;
+}
+
+.mobile-nav-toggle[aria-expanded="true"] {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(6, 35, 53, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M6 6l18 18M6 24L24 6'/%3e%3c/svg%3e");
+}
+
+/* Ocultar texto para accesibilidad */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Media Query: Estilos que se aplican en pantallas de 768px o menos */
+@media (max-width: 768px) {
+  .main-nav {
+    position: fixed;
+    z-index: 1000;
+    inset: 0 0 0 30%; /* Ocupa el 70% derecho de la pantalla */
+    flex-direction: column;
+    padding: min(20vh, 10rem) 2em;
+    background: hsl(0 0% 100% / 0.9);
+    backdrop-filter: blur(1rem);
+    transform: translateX(100%);
+    transition: transform 350ms ease-out;
+  }
+
+  .main-nav[data-visible="true"] {
+    transform: translateX(0%);
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+
+  .mobile-nav-toggle {
+    display: block;
+  }
+}

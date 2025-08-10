@@ -394,3 +394,44 @@
   grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 1rem;
 }
+/* src/App.css (Añadir al final) */
+
+/* --- Media Queries para Diseño Adaptable --- */
+
+@media (max-width: 768px) {
+  /* Ajustes generales para móviles */
+  .App, .property-detail-container {
+    padding: 1rem;
+  }
+
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  /* Buscador en móvil */
+  .search-form-grid, .advanced-filters-grid {
+    grid-template-columns: 1fr; /* Una sola columna */
+  }
+
+  .search-form-grid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .search-input, .search-select, .search-button {
+    width: 100%;
+  }
+
+  /* Página de Detalle en móvil */
+  .detail-layout {
+    grid-template-columns: 1fr; /* La columna lateral se apila debajo */
+    gap: 2rem;
+  }
+
+  .detail-header h1 {
+    font-size: 1.8rem;
+  }
+  .detail-price {
+    font-size: 1.6rem;
+  }
+}
