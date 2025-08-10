@@ -337,6 +337,14 @@
     flex-basis: 120px;
 }
 
+/* Estilos para MÓVIL (768px o menos) */
+@media (max-width: 768px) {
+  .search-form-grid {
+    flex-direction: column; /* Apila los elementos verticalmente */
+    align-items: stretch; /* Estira los elementos al 100% del ancho */
+  }
+}
+
 .search-input, .search-select {
   padding: 0.8rem;
   border: 1px solid #ccc;
