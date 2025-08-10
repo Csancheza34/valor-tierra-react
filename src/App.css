@@ -408,19 +408,32 @@
     font-size: 2.2rem;
   }
 
-  /* Buscador en móvil */
-  .search-form-grid, .advanced-filters-grid {
-    grid-template-columns: 1fr; /* Una sola columna */
-  }
+  /* --- Estilos para el Buscador en Móvil --- */
+.search-form-grid {
+  display: flex;
+  flex-direction: column; /* Apilamos los elementos */
+  gap: 0.75rem; /* Reducimos el espacio entre elementos */
+}
 
-  .search-form-grid {
-    display: flex;
-    flex-direction: column;
-  }
+/* Hacemos que el input principal ocupe el espacio disponible */
+.search-form-grid > .search-input {
+  flex-grow: 1;
+}
 
-  .search-input, .search-select, .search-button {
-    width: 100%;
-  }
+.search-input, .search-select, .search-button {
+  width: 100%; /* Ocupan todo el ancho */
+  padding: 0.8rem;
+  font-size: 1rem; /* Aseguramos un tamaño de fuente legible */
+}
+
+.search-button {
+  min-height: auto; /* El botón se ajusta al contenido */
+}
+
+.advanced-filters-grid {
+  grid-template-columns: 1fr; /* Una sola columna para los filtros avanzados también */
+  gap: 0.75rem;
+}
 
   /* Página de Detalle en móvil */
   .detail-layout {

@@ -110,3 +110,13 @@
     display: block;
   }
 }
+/* --- Estilos para el Header en Móvil --- */
+@media (max-width: 768px) {
+  .header-content {
+    height: 60px; /* Reducimos un poco la altura del header en móviles */
+  }
+
+  .logo img {
+    height: 30px; /* Reducimos la altura del logo en móviles */
+  }
+}
