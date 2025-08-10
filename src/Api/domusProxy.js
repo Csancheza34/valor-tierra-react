@@ -1,21 +1,25 @@
 // api/domusProxy.js
 
 export default async function handler(request, response) {
-  // 1. Clonamos los parámetros de la URL que nos llegan
-  const queryParams = new URL(request.url, `http://${request.headers.host}`).searchParams;
+  // 1. Creamos un objeto URL para manejar los parámetros fácilmente
+  const incomingUrl = new URL(request.url, `http://${request.headers.host}`);
+  const endpoint = incomingUrl.searchParams.get('endpoint') || 'properties';
 
-  // 2. Obtenemos nuestro parámetro 'endpoint' y lo borramos de la lista
-  const endpoint = queryParams.get('endpoint') || 'properties';
-  queryParams.delete('endpoint');
+  // 2. Creamos la URL base de Domus
+  const domusUrl = new URL(`https://api.domus.la/3.0/${endpoint}`);
 
-  // 3. Construimos la URL final de Domus solo con los parámetros restantes
-  const domusUrl = `https://api.domus.la/3.0/${endpoint}?${queryParams.toString()}`;
+  // 3. Copiamos todos los parámetros de búsqueda, excepto el nuestro ('endpoint')
+  incomingUrl.searchParams.forEach((value, key) => {
+    if (key !== 'endpoint') {
+      domusUrl.searchParams.append(key, value);
+    }
+  });
 
   try {
-    const apiResponse = await fetch(domusUrl, {
+    const apiResponse = await fetch(domusUrl.toString(), {
       method: 'GET',
       headers: {
-        'Authorization': process.env.DOMUS_API_TOKEN, // Usando la variable de entorno
+        'Authorization': process.env.DOMUS_API_TOKEN,
         'inmobiliaria': '1',
         'Ficha': '1'
       }
