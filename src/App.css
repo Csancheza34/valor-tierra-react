@@ -318,11 +318,9 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.search-form-grid {
-  display: flex;
-  flex-wrap: wrap; 
-  gap: 1rem;
-  align-items: center;
+.hero-section .search-form-grid {
+  flex-direction: column !important; /* Forzamos la dirección vertical */
+  align-items: stretch !important; /* Forzamos el estiramiento de los items */
 }
 
 /* --- ESTILOS PARA ESCRITORIO --- */
