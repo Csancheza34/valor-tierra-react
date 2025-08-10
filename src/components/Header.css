@@ -117,6 +117,6 @@
   }
 
   .logo img {
-    height: 30px; /* Reducimos la altura del logo en móviles */
+    height: 35px; /* Reducimos la altura del logo en móviles */
   }
 }
