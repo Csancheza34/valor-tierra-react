@@ -307,7 +307,7 @@
 .submit-button:hover {
   background-color: var(--color-naranja-quemado);
 }
-/* --- Estilos para el Buscador Avanzado --- */
+/* --- Estilos para el Buscador (Versión Final Definitiva) --- */
 .search-filters-container {
   background-color: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(5px);
@@ -325,23 +325,79 @@
   align-items: center;
 }
 
+/* --- ESTILOS PARA ESCRITORIO --- */
 .search-form-grid > .search-input {
-  flex: 2 1 250px; 
+  flex: 1 1 300px; 
 }
-
 .search-form-grid > .search-select {
-    flex: 1 1 150px;
+    flex: 1 1 180px;
 }
-
 .search-form-grid > .search-button {
-    flex-basis: 120px;
+    flex-shrink: 0; /* Evita que el botón se encoja */
 }
 
-/* Estilos para MÓVIL (768px o menos) */
+.search-input, .search-select {
+  padding: 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-sizing: border-box;
+  background-color: #fff;
+  height: 50px; /* Altura fija para alinear todo */
+}
+
+.search-button {
+  padding: 0.8rem 1.5rem;
+  border: none;
+  background-color: var(--color-naranja-brillante);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  height: 50px; /* Misma altura para alinear */
+  transition: background-color 0.2s ease;
+}
+.search-button:hover {
+  background-color: var(--color-naranja-quemado);
+}
+
+.search-toggles {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.toggle-link {
+  color: var(--color-azul-muy-oscuro);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.clear-button {
+  background: none;
+  border: none;
+  color: #777;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 0.5rem;
+}
+
+.advanced-filters-grid {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e9ecef;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+}
+
+/* --- ESTILOS PARA MÓVIL (768px o menos) --- */
 @media (max-width: 768px) {
   .search-form-grid {
-    flex-direction: column; /* Apila los elementos verticalmente */
-    align-items: stretch; /* Estira los elementos al 100% del ancho */
+    flex-direction: column;
+    align-items: stretch; 
   }
 }
 
