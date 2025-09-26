@@ -7,6 +7,9 @@ import ContactForm from '../components/ContactForm'; // Importamos el formulario
 import '../App.css';
 
 // --- Componente para la Galería de Imágenes (ahora usa el array 'images') ---
+// Dentro de src/pages/PropertyDetail.jsx
+
+// --- Componente para la Galería de Imágenes (Versión Final Verificada) ---
 const ImageGallery = ({ images = [] }) => {
   const [mainImage, setMainImage] = useState(images.length > 0 ? images[0].imageurl : '/placeholder.png');
 
@@ -23,12 +26,14 @@ const ImageGallery = ({ images = [] }) => {
       <div className="main-image-wrapper">
         <img src={mainImage} alt="Foto principal del inmueble" className="main-image" />
       </div>
+
       {images.length > 1 && (
-        <div className="thumbnail-wrapper">
+        // ESTE ES EL DIV CLAVE
+        <div className="thumbnail-wrapper"> 
           {images.map((img, index) => (
             <img
               key={index}
-              src={img.thumburl || img.imageurl} // Usamos la miniatura si existe
+              src={img.thumburl || img.imageurl}
               alt={`Foto ${index + 1}`}
               className={mainImage === img.imageurl ? 'thumbnail active' : 'thumbnail'}
               onClick={() => setMainImage(img.imageurl)}
@@ -39,7 +44,6 @@ const ImageGallery = ({ images = [] }) => {
     </div>
   );
 };
-
 // --- Componente para la Ficha del Asesor ---
 const AgentCard = ({ agent }) => {
     if (!agent) return null;
