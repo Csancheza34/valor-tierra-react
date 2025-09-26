@@ -36,71 +36,45 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* src/App.css (Reemplazar la sección del buscador y las media queries) */
-
-/* --- Estilos para el Buscador (Enfoque Mobile-First Definitivo) --- */
-/* (El contenedor .search-filters-container y los estilos de los inputs/botones se quedan como estaban) */
-
 /* ESTILOS BASE (MÓVIL POR DEFECTO) */
 .search-form-grid {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Apilado verticalmente por defecto */
   gap: 0.75rem;
 }
+
 .advanced-filters-grid {
   margin-top: 1rem;
   padding-top: 1rem;
   border-top: 1px solid #e9ecef;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr; /* Una columna en móvil */
   gap: 0.75rem;
 }
 
 /* ESTILOS PARA ESCRITORIO (pantallas de 769px o más) */
 @media (min-width: 769px) {
   .search-form-grid {
-    flex-direction: row;
+    flex-direction: row; /* Vuelve a ser horizontal */
     align-items: center;
   }
+
   .search-form-grid > .search-input {
-    flex: 1 1 300px;
+    flex: 1 1 300px; 
   }
   .search-form-grid > .search-select {
-    flex: 1 1 180px;
+      flex: 1 1 180px;
   }
   .search-form-grid > .search-button {
-    flex-shrink: 0;
+      flex-shrink: 0; 
   }
+  
   .advanced-filters-grid {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Múltiples columnas en escritorio */
     gap: 1rem;
   }
 }
 
-/* --- Media Queries Generales para Diseño Adaptable --- */
-@media (max-width: 768px) {
-  /* Ajustes de layout principal */
-  .main-content, .property-detail-container {
-    padding: 1rem;
-  }
-  .hero-section {
-    padding: 3rem 1rem;
-  }
-  .hero-content h1 {
-    font-size: 2.2rem;
-  }
-  /* Layout de la página de detalle */
-  .detail-layout {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  .detail-header h1 {
-    font-size: 1.8rem;
-  }
-  .detail-price {
-    font-size: 1.6rem;
-  }
-}
 /* --- Estilos comunes que no cambian --- */
 .search-input, .search-select {
   padding: 0.8rem;
@@ -175,33 +149,7 @@
     font-size: 1.6rem;
   }
 }
-/* En src/App.css, DENTRO de @media (max-width: 768px) */
 
-/* --- Ajustes para la Galería en Móvil --- */
-.thumbnail-wrapper {
-  grid-template-columns: none; /* Desactivamos el grid */
-  display: flex; /* La convertimos en un contenedor flexible */
-  overflow-x: auto; /* AÑADIMOS SCROLL HORIZONTAL */
-  padding-bottom: 1rem; /* Damos espacio para la barra de scroll */
-  -webkit-overflow-scrolling: touch; /* Scroll suave en iOS */
-  scrollbar-width: thin; /* Barra de scroll más delgada en Firefox */
-}
-
-.thumbnail {
-  width: 90px; /* Ancho fijo para cada miniatura */
-  height: 70px; /* Altura fija */
-  flex-shrink: 0; /* Evita que las imágenes se encojan */
-}
-
-/* --- Ajustes para el Formulario y Sidebar --- */
-.detail-section {
-  padding: 1.25rem; /* Reducimos un poco el padding en las cajas */
-}
-
-.agent-photo {
-    width: 60px; /* Hacemos la foto del asesor un poco más pequeña */
-    height: 60px;
-}
 /* --- Estilos para Ficha de Asesor y Formulario --- */
 /* (El resto de los estilos que ya teníamos) */
 
