@@ -175,7 +175,33 @@
     font-size: 1.6rem;
   }
 }
+/* En src/App.css, DENTRO de @media (max-width: 768px) */
 
+/* --- Ajustes para la Galería en Móvil --- */
+.thumbnail-wrapper {
+  grid-template-columns: none; /* Desactivamos el grid */
+  display: flex; /* La convertimos en un contenedor flexible */
+  overflow-x: auto; /* AÑADIMOS SCROLL HORIZONTAL */
+  padding-bottom: 1rem; /* Damos espacio para la barra de scroll */
+  -webkit-overflow-scrolling: touch; /* Scroll suave en iOS */
+  scrollbar-width: thin; /* Barra de scroll más delgada en Firefox */
+}
+
+.thumbnail {
+  width: 90px; /* Ancho fijo para cada miniatura */
+  height: 70px; /* Altura fija */
+  flex-shrink: 0; /* Evita que las imágenes se encojan */
+}
+
+/* --- Ajustes para el Formulario y Sidebar --- */
+.detail-section {
+  padding: 1.25rem; /* Reducimos un poco el padding en las cajas */
+}
+
+.agent-photo {
+    width: 60px; /* Hacemos la foto del asesor un poco más pequeña */
+    height: 60px;
+}
 /* --- Estilos para Ficha de Asesor y Formulario --- */
 /* (El resto de los estilos que ya teníamos) */
 
