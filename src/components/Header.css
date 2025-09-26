@@ -5,7 +5,6 @@
   border-bottom: 1px solid #e9ecef;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
 }
-
 .header-content {
   display: flex;
   justify-content: space-between;
@@ -14,16 +13,13 @@
   margin: 0 auto;
   height: 80px;
 }
-
 .logo a {
-  font-size: 1.8rem;
-  font-weight: 800; /* Open Sans Black es muy grueso (800 o 900) */
-  font-family: 'Open Sans', sans-serif;
-  color: var(--color-azul-muy-oscuro); /* Usando variable de color */
   text-decoration: none;
-  text-transform: uppercase; /* Para imitar el estilo del logo */
 }
-
+.logo img {
+  height: 35px;
+  display: block;
+}
 .main-nav ul {
   margin: 0;
   padding: 0;
@@ -31,64 +27,26 @@
   display: flex;
   gap: 2rem;
 }
-
 .main-nav a {
   text-decoration: none;
-  color: var(--color-azul-oscuro); /* Usando variable de color */
+  color: var(--color-azul-oscuro);
   font-weight: 600;
   transition: color 0.2s ease;
 }
-
 .main-nav a:hover {
-  color: var(--color-naranja-brillante); /* Usando variable de color */
+  color: var(--color-naranja-brillante);
 }
-/* Añadir al final de src/components/Header.css */
-
-.logo img {
-  height: 100px; /* Ajusta este valor según el tamaño que prefieras */
-  display: block; /* Ayuda a eliminar espacios extra debajo de la imagen */
-}
-/* src/components/Header.css (Añadir al final) */
 
 /* --- Estilos para el Menú Móvil --- */
 .mobile-nav-toggle {
-  display: none; /* Oculto en escritorio */
-  position: absolute;
-  z-index: 2000;
-  right: 2rem;
-  top: 2rem;
-  background: transparent;
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(6, 35, 53, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-  background-repeat: no-repeat;
-  width: 2rem;
-  height: 2rem;
-  border: 0;
-  cursor: pointer;
+  display: none;
 }
 
-.mobile-nav-toggle[aria-expanded="true"] {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(6, 35, 53, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M6 6l18 18M6 24L24 6'/%3e%3c/svg%3e");
-}
-
-/* Ocultar texto para accesibilidad */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
-}
-
-/* Media Query: Estilos que se aplican en pantallas de 768px o menos */
 @media (max-width: 768px) {
   .main-nav {
     position: fixed;
     z-index: 1000;
-    inset: 0 0 0 30%; /* Ocupa el 70% derecho de la pantalla */
+    inset: 0 0 0 30%;
     flex-direction: column;
     padding: min(20vh, 10rem) 2em;
     background: hsl(0 0% 100% / 0.9);
@@ -96,27 +54,28 @@
     transform: translateX(100%);
     transition: transform 350ms ease-out;
   }
-
   .main-nav[data-visible="true"] {
     transform: translateX(0%);
   }
-
   .main-nav ul {
     flex-direction: column;
     gap: 2.5rem;
   }
-
   .mobile-nav-toggle {
     display: block;
+    position: absolute;
+    z-index: 2000;
+    right: 2rem;
+    top: 2rem;
+    background: transparent;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(6, 35, 53, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    width: 2rem;
+    height: 2rem;
+    border: 0;
+    cursor: pointer;
   }
-}
-/* --- Estilos para el Header en Móvil --- */
-@media (max-width: 768px) {
-  .header-content {
-    height: 60px; /* Reducimos un poco la altura del header en móviles */
-  }
-
-  .logo img {
-    height: 50px; /* Reducimos la altura del logo en móviles */
+  .mobile-nav-toggle[aria-expanded="true"] {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(6, 35, 53, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M6 6l18 18M6 24L24 6'/%3e%3c/svg%3e");
   }
 }

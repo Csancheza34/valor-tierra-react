@@ -1,31 +1,28 @@
 // src/components/Header.jsx
-import React, { useState } from 'react'; // Importamos useState
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Header.css';
 
 const Header = () => {
-  // Estado para controlar si el menú móvil está abierto
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <header className="site-header">
       <div className="header-content">
         <div className="logo">
-          <a href="/">
-            <img src="/logo-valortierra.png" alt="Logo ValorTierra" />
-          </a>
+          <Link to="/">
+            <img src="/logo-valortierra.svg" alt="Logo ValorTierra" />
+          </Link>
         </div>
 
-        {/* Botón de Hamburguesa (solo visible en móvil) */}
         <button 
           className="mobile-nav-toggle" 
-          aria-controls="primary-navigation" 
           aria-expanded={isMenuOpen}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
         >
           <span className="sr-only">Menú</span>
         </button>
 
-        {/* Navegación Principal */}
         <nav className="main-nav" data-visible={isMenuOpen}>
           <ul>
             <li><a href="https://simidocs.siminmobiliarias.com/base/simired/simidocsapi1.0/index.php?inmo=469&tipo=2" target="_blank" rel="noopener noreferrer">Arrendatarios</a></li>
