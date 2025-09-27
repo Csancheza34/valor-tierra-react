@@ -28,8 +28,7 @@ const ImageGallery = ({ images = [] }) => {
       </div>
 
       {images.length > 1 && (
-        // ESTE ES EL DIV CLAVE
-        <div className="thumbnail-wrapper"> 
+        <div className="thumbnail-wrapper">  {/* <-- CLASE CLAVE */}
           {images.map((img, index) => (
             <img
               key={index}

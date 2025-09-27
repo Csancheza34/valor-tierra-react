@@ -123,7 +123,21 @@
   font-weight: bold;
   padding: 0.5rem;
 }
+/* --- Ajustes para la Galería en Móvil --- */
+.thumbnail-wrapper {
+  grid-template-columns: none; /* Desactivamos el grid que venía de la vista de escritorio */
+  display: flex; /* La convertimos en un contenedor flexible */
+  overflow-x: auto; /* AÑADIMOS SCROLL HORIZONTAL */
+  padding-bottom: 1rem; /* Damos espacio para la barra de scroll si aparece */
+  -webkit-overflow-scrolling: touch; /* Hacemos el scroll más suave en iOS */
+  scrollbar-width: thin; /* Hacemos la barra de scroll más delgada en Firefox */
+}
 
+.thumbnail {
+  width: 90px; /* Le damos un ancho fijo a cada miniatura */
+  height: 70px; /* y una altura fija */
+  flex-shrink: 0; /* Evita que las imágenes se encojan para caber */
+}
 /* --- Estilos generales para Media Queries --- */
 @media (max-width: 768px) {
   .header-content {
