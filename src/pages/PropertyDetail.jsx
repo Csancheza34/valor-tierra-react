@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link as RouterLink } from 'react-router-dom';
 import { fetchPropertyByCode } from '../Api/domus.js';
 import ContactForm from '../components/ContactForm'; // Importamos el formulario
-import '../App.css';
+import '../App.styles.css';
 
 // --- Componente para la Galería de Imágenes (ahora usa el array 'images') ---
 // Dentro de src/pages/PropertyDetail.jsx
