@@ -9,7 +9,8 @@ import '../App.css';
 // --- Componente para la Galería de Imágenes (ahora usa el array 'images') ---
 // Dentro de src/pages/PropertyDetail.jsx
 
-// --- Componente para la Galería de Imágenes (Versión Final Verificada) ---
+// Dentro de src/pages/PropertyDetail.jsx
+
 const ImageGallery = ({ images = [] }) => {
   const [mainImage, setMainImage] = useState(images.length > 0 ? images[0].imageurl : '/placeholder.png');
 
@@ -21,14 +22,15 @@ const ImageGallery = ({ images = [] }) => {
     return <img src="/placeholder.png" alt="Inmueble sin foto" className="main-image" />;
   }
 
+  // Añadimos un borde rojo brillante para la prueba
   return (
-    <div className="gallery-container">
+    <div className="gallery-container" style={{ border: '5px solid red' }}>
       <div className="main-image-wrapper">
         <img src={mainImage} alt="Foto principal del inmueble" className="main-image" />
       </div>
 
       {images.length > 1 && (
-        <div className="thumbnail-wrapper">  {/* <-- CLASE CLAVE */}
+        <div className="thumbnail-wrapper">
           {images.map((img, index) => (
             <img
               key={index}
