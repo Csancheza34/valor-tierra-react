@@ -27,7 +27,7 @@ const Header = () => {
           <ul>
             <li><a href="https://simidocs.siminmobiliarias.com/base/simired/simidocsapi1.0/index.php?inmo=469&tipo=2" target="_blank" rel="noopener noreferrer">Arrendatarios</a></li>
             <li><a href="https://simidocs.siminmobiliarias.com/base/simired/simidocsapi1.0/index.php?inmo=469&tipo=1" target="_blank" rel="noopener noreferrer">Propietarios</a></li>
-            <li><a href="https://www.e-collect.com/customers/PAGOSVALORTIERRA.HTM" target="_blank" rel="noopener noreferrer">Pagos en Línea</a></li>
+            <li><a href=" https://pagos.palomma.com/corralmaldonado" target="_blank" rel="noopener noreferrer">Pagos en Línea</a></li>
             <li><a href="https://wa.me/573204192835?text=Hola%2C%20quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20servicios%20en%20ValorTierra.com" target="_blank" rel="noopener noreferrer">Contacto</a></li>
           </ul>
         </nav>
